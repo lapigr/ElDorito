@@ -26,6 +26,29 @@ namespace Modules
 		Command* VarDiscordEnable;
 		Command* VarDiscordAutoAccept;
 
+		Command* VarConsoleURL;
+		Command* VarChatURL;
+		Command* VarMedalsURL;
+		Command* VarLoadingURL;
+		Command* VarVotingURL;
+		Command* VarScoreboardURL;
+		Command* VarKeyboardURL;
+		Command* VarAlertURL;
+		Command* VarSettingsURL;
+		Command* VarProfileSettingsURL;
+		Command* VarServerSettingsURL;
+		Command* VarForgeObjectCreationURL;
+		Command* VarForgeObjectPropertiesURL;
+		Command* VarSpectateURL;
+		Command* VarVoipURL;
+		Command* VarWeaponOffsetURL;
+		Command* VarScreenshotNoticeURL;
+		Command* VarExitURL;
+		Command* VarDiscordURL;
+		Command* VarReportURL;
+		Command* VarInGameVotingURL;
+		Command* VarTitleURL;
+
 		int DebugFlags;
 
 		std::vector<std::string> CustomMapList;

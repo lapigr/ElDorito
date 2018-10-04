@@ -25,10 +25,10 @@ static const char* APPLICATION_ID = "378984448022020112";
 //address paired with a bool defining if a trailing /n must be removed
 static const std::pair<std::wstring, bool> ipGetter[SITE_NUMBER] =
 {
-	std::make_pair(L"http://checkip.amazonaws.com/", true),
-	std::make_pair(L"http://ipecho.net/plain", false),
-	std::make_pair(L"http://myexternalip.com/raw", true),
-	std::make_pair(L"http://diagnostic.opendns.com/myip", false)
+	//std::make_pair(L"http://checkip.amazonaws.com/", true),
+	//std::make_pair(L"http://ipecho.net/plain", false),
+	//std::make_pair(L"http://myexternalip.com/raw", true),
+	//std::make_pair(L"http://diagnostic.opendns.com/myip", false)
 };
 
 namespace
@@ -156,7 +156,7 @@ namespace
 
 	void handleDiscordReady()
 	{
-		Discord::DiscordRPC::Instance().Update();
+		//Discord::DiscordRPC::Instance().Update();
 	}
 
 	DWORD WINAPI DiscordRetrieveExternalIP_Thread(LPVOID lpParam)
@@ -251,7 +251,7 @@ namespace Discord
 
 	DiscordRPC::DiscordRPC()
 	{
-		joinString = "";
+		/*joinString = "";
 		detailString = "";
 		Utils::Cryptography::RandomPassword(32, matchSecret);
 
@@ -270,7 +270,7 @@ namespace Discord
 		handlers.joinRequest = handleDiscordJoinRequest;
 		Discord_Initialize(APPLICATION_ID, &handlers, 1, NULL);
 
-		Patches::Core::OnShutdown(OnShutdown);
+		Patches::Core::OnShutdown(OnShutdown);*/
 	}
 
 	void DiscordRPC::ReplyToJoinRequest(const char* userId, int reply)
@@ -286,9 +286,9 @@ namespace Discord
 	void DiscordRPC::Update()
 	{
 #ifdef DISCORD_DISABLE_IO_THREAD
-		Discord_UpdateConnection();
+		//Discord_UpdateConnection();
 #endif
-		UpdatePresence();
-		Discord_RunCallbacks();
+		//UpdatePresence();
+		//Discord_RunCallbacks();
 	}
 }

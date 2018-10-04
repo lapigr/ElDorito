@@ -257,12 +257,7 @@ namespace Blam::Network
 	bool SetNetworkMode(int mode)
 	{
 		auto Set_Network_Mode = (bool(__cdecl*)(int))(0x00A7F950);
-		bool success = Set_Network_Mode(mode);
-
-		//Let Discord Know
-		Discord::DiscordRPC::Instance().UpdatePresence(mode);
-
-		return success;
+		return Set_Network_Mode(mode);
 	}
 	
 	bool Disconnect()
@@ -282,6 +277,8 @@ namespace Blam::Network
 	bool NetworkAddress::Parse(const std::string &addr, uint16_t port, NetworkAddress *result)
 	{
 		struct in_addr inAddr;
+		if (!result)
+			return false;
 		if (!inet_pton(AF_INET, addr.c_str(), &inAddr))
 			return false;
 		*result = Blam::Network::NetworkAddress::FromInAddr(inAddr.S_un.S_addr, port);

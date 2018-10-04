@@ -147,8 +147,6 @@ void ElDorito::Initialize()
 	// maybe use an unordered_map here
 	if (!Modules::ModuleInput::Instance().IsCommandBound("game.takescreenshot"))
 		Modules::CommandMap::Instance().ExecuteCommand("Bind PrintScreen Game.TakeScreenshot");
-	if (!Modules::ModuleInput::Instance().IsCommandBound("game.showscreen discord"))
-		Modules::CommandMap::Instance().ExecuteCommand("Bind F4 Game.ShowScreen discord");
 	if (!Modules::ModuleInput::Instance().IsCommandBound("game.showscreen browser"))
 		Modules::CommandMap::Instance().ExecuteCommand("Bind F11 game.showscreen browser");
 
@@ -287,7 +285,6 @@ void ElDorito::Tick()
 	Server::Stats::Tick();
 	Server::Voting::Tick();
 	ChatCommands::Tick();
-	Discord::DiscordRPC::Instance().Update();
 
 	// TODO: refactor this elsewhere
 	Modules::ModuleCamera::Instance().UpdatePosition();

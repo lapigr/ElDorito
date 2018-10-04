@@ -50,7 +50,7 @@ private:
 	std::string serverAddress = "";
 	std::string serverPassword = "";
 	std::string instanceName = "";
-	bool skipTitleSplash = false;
+	bool skipTitleSplash = true;
 	static bool(__cdecl * Video_InitD3D)(bool, bool);
 
 	void setWatermarkText(const std::string& Message);
